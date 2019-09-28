@@ -27,6 +27,10 @@ const Project = () => {
     let status = activeProject.participants.includes(user.id) ? STATUSES.participant : STATUSES.notMember;
     status = activeProject.admin === user.id ? STATUSES.admin : status;
 
+    const allTasks = activeProject.tasks.length;
+    const completeTasks = activeProject.tasks.reduce((result, task) => {
+        return task.complete ? result + 1 : result;
+    }, 0);
 
 	return (
 		<Panel id={VIEWS.project}>
@@ -57,7 +61,7 @@ const Project = () => {
                 <Cell
                     expandable
                     size="l"
-                    description="Выполнено 4 из 9 заданий"
+                    description={`Выполнено ${completeTasks} из ${allTasks} заданий`}
                     onClick={routeFactory(VIEWS.checkList)}
                 >
                     Задачи проекта
