@@ -1,35 +1,24 @@
 import React from 'react';
-import { usePlatform, IOS } from '@vkontakte/vkui'
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import HeaderButton from '@vkontakte/vkui/dist/components/HeaderButton/HeaderButton';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import CellButton from '@vkontakte/vkui/dist/components/CellButton/CellButton';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import List from '@vkontakte/vkui/dist/components/List/List';
-import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
-import Icon24Back from '@vkontakte/icons/dist/24/back';
 import '@vkontakte/vkui/dist/vkui.css';
+import PanelHeaderSimple from '../components/PanelHeaderSimple';
 import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
 const Partials = () => {
     const { setActiveView } = useStore();
-    const platform = usePlatform();
     const onBack = () => {
         setActiveView(VIEWS.project);
     };
 
 	return (
 		<Panel id={VIEWS.partials}>
-            <PanelHeader
-                theme="light"
-                left={<HeaderButton onClick={onBack}>{platform === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}
-                addon={<HeaderButton onClick={onBack}>Назад</HeaderButton>}
-            >
-                Учавствуют в мероприятии
-            </PanelHeader>
+            <PanelHeaderSimple onBack={onBack}>Учавствуют в мероприятии</PanelHeaderSimple>
             <Group>
 				<CellButton>Добавить нового участника</CellButton>
 			</Group>

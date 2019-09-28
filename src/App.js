@@ -6,6 +6,7 @@ import Main from './panels/Main';
 import Project from './panels/Project';
 import ProjectDetail from './panels/ProjectDetail';
 import Partials from './panels/Partials';
+import CheckList from './panels/CheckList';
 import { VIEWS } from './constants';
 import { useStore } from './stores/app-store';
 
@@ -28,6 +29,7 @@ const App = () => {
 			<Project id={VIEWS.project} />
 			<ProjectDetail id={VIEWS.projectDetail} />
 			<Partials id={VIEWS.partials} />
+			<CheckList id={VIEWS.checkList} />
 		</View>
 	);
 }

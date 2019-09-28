@@ -8,5 +8,6 @@ export const VIEWS = {
     main: 'main',
     project: 'project',
     projectDetail: 'projectDetail',
-    partials: 'partials'
+    partials: 'partials',
+    checkList: 'checkList',
 };

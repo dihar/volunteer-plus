@@ -1,38 +1,27 @@
 import React from 'react';
-import { usePlatform, IOS } from '@vkontakte/vkui'
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Header from '@vkontakte/vkui/dist/components/Header/Header';
-import HeaderButton from '@vkontakte/vkui/dist/components/HeaderButton/HeaderButton';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import List from '@vkontakte/vkui/dist/components/List/List';
-import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
-import Icon24Back from '@vkontakte/icons/dist/24/back';
 import Icon24Document from '@vkontakte/icons/dist/24/document';
 import Icon24Info from '@vkontakte/icons/dist/24/info';
 import '@vkontakte/vkui/dist/vkui.css';
+import PanelHeaderSimple from '../components/PanelHeaderSimple';
 import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
 const ProjectDetail = () => {
     const { setActiveView } = useStore();
-    const platform = usePlatform();
     const onBack = () => {
         setActiveView(VIEWS.project);
     };
 
 	return (
 		<Panel id={VIEWS.projectDetail}>
-            <PanelHeader
-                theme="light"
-                left={<HeaderButton onClick={onBack}>{platform === IOS ? <Icon28ChevronBack /> : <Icon24Back />}</HeaderButton>}
-                addon={<HeaderButton onClick={onBack}>Назад</HeaderButton>}
-            >
-                Описание
-            </PanelHeader>
+            <PanelHeaderSimple onBack={onBack}>Описание</PanelHeaderSimple>
             <Header>
                 Проект посадки деревьев
             </Header>
