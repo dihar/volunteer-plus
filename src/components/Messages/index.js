@@ -3,6 +3,7 @@ import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import Tabs from '@vkontakte/vkui/dist/components/Tabs/Tabs';
+import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import TabsItem from '@vkontakte/vkui/dist/components/TabsItem/TabsItem';
 import Input from '@vkontakte/vkui/dist/components/Input/Input';
 import messagesData from './data.json';
@@ -11,7 +12,7 @@ import './styles.css';
 
 const Messages = () => {
     const [active, setActive] = useState('dial');
-    const mess = active !== 'dial' ? messagesData : messagesAllData;
+    const mess = active === 'messages' ? messagesData : messagesAllData;
 
     return (
         <Fragment>
@@ -29,6 +30,12 @@ const Messages = () => {
                             selected={active === 'messages'}
                         >
                             По задаче
+                        </TabsItem>
+                        <TabsItem
+                            onClick={() => setActive('private')}
+                            selected={active === 'private'}
+                        >
+                            Личный чат
                         </TabsItem>
                     </Tabs>
                 </Cell>
@@ -50,6 +57,7 @@ const Messages = () => {
                     ))}
                 </div>
                 <Cell><Input type="text" placeholder="Ответить..."/></Cell>
+                <Cell><Button>Отправить</Button></Cell>
             </Group>
         </Fragment>
     );

@@ -2,9 +2,9 @@
     "projects": [
         {
             "id": 0,
-            "admin": 10,
+            "admin": 11,
             "title": "Посадка деревьев",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpYe5yPqQnJknDvuZXq5UyA_2xB3gNlvsADLDRiLUoXCkfSrcfpFa3Qzdtig",
+            "image": "https://avatars.mds.yandex.net/get-pdb/1863838/b904506d-663d-4680-8b43-56ea0ace97c7/orig",
             "shortDescription": "Посадить 20 берёз в Коломенском парке",
             "description": "Социальный проект для облагораживания территории в районе парка Коломенское. Очень важно успеть в течение недели. Сделаем наш парк Лучше!",
             "participants": [
@@ -15,12 +15,308 @@
             "tasks": [
                 {
                     "complete": true,
-                    "title": "Посадить две берёзы",
-                    "description": "Северная сторона парка",
+                    "title": "Согласовать Акцию с органами гос. управления",
+                    "description": "Согласовать Акцию с префектурой южного округа.",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Обозначить периметр",
+                    "description": "Обозначить периметр высадки деревьев",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Рассчитать количество саженцев, сорта",
+                    "description": "Рассчитать количество саженцев, подобрать сорта, чтобы не нарушить экосистему",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Согласовать дату и время акции",
+                    "description": "Определить дату и время проведения акции",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Определить минимальное число участников",
+                    "description": "Определить минимальное число участников",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Инвентарь и материалы",
+                    "description": "Определить какой нужен инвентарь и материалы и где его брать",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Организовать финансирование",
+                    "description": "Получить деньги от спонсора",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Закупка и доставка саженцев",
+                    "description": "Организовать закупку и доставку саженцев",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Распределить роли и разослать всем инструкции",
+                    "description": "Распределить роли и разослать всем инструкции",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Произвести посадку",
+                    "description": "Посадить все саженцы согласно плану",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Проконтролировать результаты",
+                    "description": "Проследить, чтобы все саженцы были посажены согласно плану",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Сделать фотоотчет",
+                    "description": "Зафиксировать результат акции фотоотчетом",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Зачислить 'часы' участникам",
+                    "description": "Зафиксировать часы потраченные волонтерами на участие в посадке деревьев",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Наградить лучших",
+                    "description": "Наградить лучших участников знаками отличия",
                     "responsible": "12"
                 }
+
+
+            ]
+        },
+		
+		{
+            "id": 1,
+            "admin": 10,
+            "title": "День учителя",
+            "image": "https://pbs.twimg.com/media/DouOd3nWwAARwkJ.jpg",
+            "shortDescription": "Поздравляем дорогих учителей",
+            "description": "Оперативно решаем кого и как будем поздравлять в этом году и помним про особенный подарок для юбиляра - руководителя школьного музея Валентину Георгиевну",
+            "participants": [
+                15,
+                13,
+                14
+            ],
+            "tasks": [
+                {
+                    "complete": true,
+                    "title": "Пригласить участников в проект",
+                    "description": "Разослать адресные приглашения по списку родителей нашего класа",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Определить список учителей",
+                    "description": "Внимательно составить список, учесть всех новых учителей по новым предметам в этом году!!",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Предложить варианты подарков родителям на согласование",
+                    "description": "Предлагаю в этом году подарить всем натуральную косметику, ждем ваши варианты в чате",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Утвердить с участниками кому что дарим и общий бюджет",
+                    "description": "Денежки как обычно скидываем на карту Тани 11112222333355557777",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Назначить ответственных за закупку",
+                    "description": "Назначить ответственных за закупку, разослать им списки подарков",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Кто будет дарить",
+                    "description": "Назначить ответственных за вручение подарков",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Место и время",
+                    "description": "Согласовать сроки закупки, дату и место вручения",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Организовать сбор средств",
+                    "description": "Организовать сбор средств",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Деньги собраны",
+                    "description": "Получить подтверждение от закупщиков в получении нужной суммы",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Подарки куплены",
+                    "description": "Получить подтверждение от закупщиков о закупке подарков",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Подарки у дарителей",
+                    "description": "Получить подтверждение от вручателей о получении подарков",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Подарки подарены",
+                    "description": "Зафиксировать результат акции фотоотчетом",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Награды родителям",
+                    "description": "Раздать виртуальные награды исполнителям",
+                    "responsible": "12"
+                }
+
+            ]
+        },
+		
+		{
+            "id": 2,
+            "admin": 11,
+            "title": "Мастер-класс Детскому дому",
+            "image": "https://berforum.ru/uploads/monthly_06_2010/post-23720-1275466942_thumb.jpg",
+            "shortDescription": "Проводим мастер класс для в ближайшую субботу",
+            "description": "Организовываем и проводим мастер класс для Детского дома, для детей 5-6 лет",
+            "participants": [
+                12,
+                13,
+                14
+            ],
+            "tasks": [
+                {
+                    "complete": true,
+                    "title": "Где проводим",
+                    "description": "Выбор детского дома",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Выбор темы",
+                    "description": "Согласование тематикии и формата с администрацией",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Время и дата",
+                    "description": "Согласование кол-ва детей, даты и времени с восписателями",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Список для закупки",
+                    "description": "Определение списка необходимых материалов, составление сметы",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Зовем участников",
+                    "description": "Приглашение участников в проект",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Распределяем задачи",
+                    "description": "Определение ролей и распределение задач между участниками",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Пороговые условия",
+                    "description": "Определить минимальное число участников",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "План закупки",
+                    "description": "Распланировать где закупать и какой нужен инвентарь и материалы",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Деньги",
+                    "description": "Организовать сбор средств",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Закупка",
+                    "description": "Распределить задачи закупщикам",
+                    "responsible": "12"
+                },
+                {
+                    "complete": true,
+                    "title": "Проверка",
+                    "description": "Получить подтверждение о закупке",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Сбор участников",
+                    "description": "Разослать уведомление участникам",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Постановка задач",
+                    "description": "Распределить задачи между участниками",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Встреча волонтеров",
+                    "description": "Зафиксировать явку всех участников",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Результативность",
+                    "description": "Получить фотоотчеты от участников",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Фиксация часов",
+                    "description": "Зачислить часы участникам",
+                    "responsible": "12"
+                },
+                {
+                    "complete": false,
+                    "title": "Награды",
+                    "description": "Наградить лучших участников знаками отличия",
+                    "responsible": "12"
+                }
+
             ]
         }
+		
+		
     ],
     "participants": [
         {

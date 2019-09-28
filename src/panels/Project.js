@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import UsersStack from '@vkontakte/vkui/dist/components/UsersStack/UsersStack';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
@@ -12,9 +12,20 @@ import { VIEWS, STATUSES} from '../constants';
 import { useStore } from '../stores/app-store';
 
 const Project = () => {
-    const { setActiveView } = useStore();
-    const [status] = useState(STATUSES.notMember);
-    const routeFactory = (target) => () => setActiveView(target);
+    const { setActiveView, activeProject, setActiveProject, user } = useStore();
+    const routeFactory = (target) => () => {
+        setActiveView(target);
+        if (target === VIEWS.main) {
+            setTimeout(() => {
+                setActiveProject(null);
+            }, 500);
+        }
+    };
+    if (!activeProject) {
+        return null;
+    }
+    let status = activeProject.participants.includes(user.id) ? STATUSES.participant : STATUSES.notMember;
+    status = activeProject.admin === user.id ? STATUSES.admin : status;
 
 
 	return (
@@ -24,12 +35,12 @@ const Project = () => {
                 <Cell
                     expandable
                     size="l"
-                    description="Посадить 20 берёз в Коломенском парке"
-                    before={<Avatar src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />}
+                    description={activeProject.shortDescription}
+                    before={<Avatar src={activeProject.image} />}
                     onClick={routeFactory(VIEWS.projectDetail)}
                     bottomContent={<Button level="commerce" disabled>{status === STATUSES.admin ? 'Вы администратор' : 'Вы участник'}</Button>}
                 >
-                    Проект посадки деревьев
+                    {activeProject.title}
                 </Cell>
             </Group>
             <Group>

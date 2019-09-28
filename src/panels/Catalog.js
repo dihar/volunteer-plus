@@ -9,9 +9,10 @@ import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
-const Catalog = ({ id, fetchedUser }) => {
-	const { setActiveView } = useStore();
-	const onProjectClick = () => {
+const Catalog = ({ id }) => {
+	const { setActiveView, projects, setActiveProject } = useStore();
+	const onProjectClick = (project) => {
+		setActiveProject(project);
 		setActiveView(VIEWS.projectDetailOnly);
 	};
 	const onNewClick = () => {
@@ -23,65 +24,19 @@ const Catalog = ({ id, fetchedUser }) => {
 			<Group>
 				<CellButton onClick={onNewClick}>Добавить новый проект</CellButton>
 			</Group>
-			{fetchedUser &&
 			<List>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-				<Cell
-					before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-					description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-					onClick={onProjectClick}
-					expandable
-				>
-					{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-				</Cell>
-			</List>}
+				{projects.map(project => (
+					<Cell
+						key={project.id}
+						before={project.image ? <Avatar src={project.image}/> : null}
+						description={project.shortDescription}
+						onClick={() => onProjectClick(project)}
+						expandable
+					>
+						{project.title}
+					</Cell>
+				))}
+			</List>
 		</Panel>
 	);
 };

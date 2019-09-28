@@ -9,10 +9,13 @@ import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
 const MyProjects = ({ id, fetchedUser }) => {
-	const { setActiveView } = useStore();
-	const onProjectClick = () => {
+	const { setActiveView, projects, setActiveProject, user } = useStore();
+	const onProjectClick = (project) => () => {
+		setActiveProject(project);
 		setActiveView(VIEWS.project);
 	};
+	const orgProjects = projects.filter(project => project.admin === user.id);
+	const partProjects = projects.filter(project => project.admin !== user.id && project.participants.includes(user.id));
 
 	return (
 		<Panel id={id}>
@@ -20,58 +23,32 @@ const MyProjects = ({ id, fetchedUser }) => {
 				<React.Fragment>
 					<Group title='Организатор'>
 						<List>
-							<Cell
-								before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-								description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-								onClick={onProjectClick}
-								expandable
-							>
-								{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-							</Cell>
-							<Cell
-								before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-								description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-								onClick={onProjectClick}
-								expandable
-							>
-								{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-							</Cell>
-							<Cell
-								before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-								description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-								onClick={onProjectClick}
-								expandable
-							>
-								{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-							</Cell>
+							{orgProjects.map(project => (
+								<Cell
+									key={project.title}
+									before={project.image ? <Avatar src={project.image}/> : null}
+									description={project.shortDescription}
+									onClick={onProjectClick(project)}
+									expandable
+								>
+									{project.title}
+								</Cell>
+							))}
 						</List>
 					</Group>
 					<Group title='Участник'>
 						<List>
-							<Cell
-								before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-								description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-								onClick={onProjectClick}
-								expandable
-							>
-								{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-							</Cell>
-							<Cell
-								before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-								description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-								onClick={onProjectClick}
-								expandable
-							>
-								{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-							</Cell>
-							<Cell
-								before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-								description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-								onClick={onProjectClick}
-								expandable
-							>
-								{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-							</Cell>
+							{partProjects.map(project => (
+								<Cell
+									key={project.title}
+									before={project.image ? <Avatar src={project.image}/> : null}
+									description={project.shortDescription}
+									onClick={onProjectClick(project)}
+									expandable
+								>
+									{project.title}
+								</Cell>
+							))}
 						</List>
 					</Group>
 				</React.Fragment>

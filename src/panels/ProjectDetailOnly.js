@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import Header from '@vkontakte/vkui/dist/components/Header/Header';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
@@ -15,40 +15,44 @@ import { VIEWS, STATUSES } from '../constants';
 import { useStore } from '../stores/app-store';
 
 const ProjectDetailOnly = () => {
-    const { setActiveView } = useStore();
+    const { setActiveView, activeProject, setActiveProject, user } = useStore();
     const onBack = () => {
         setActiveView(VIEWS.main);
     };
-    const [status, setStatus] = useState(STATUSES.noTMember);
+    let status = activeProject.participants.includes(user.id) ? STATUSES.participant : STATUSES.notMember;
+    status = activeProject.admin === user.id ? STATUSES.admin : status;
+
     const onSetStatus = (event) => {
         event.stopPropagation();
-        setStatus(STATUSES.participant);
+        activeProject.participants.push(user.id);
+        setActiveProject({ ...activeProject });
     };
-    const isActive = status !== STATUSES.noTMember;
+    const isActive = status !== STATUSES.notMember;
+    useEffect(() => () => setActiveProject(null), [setActiveProject]);
 
 	return (
 		<Panel id={VIEWS.projectDetailOnly}>
             <PanelHeaderSimple onBack={onBack}>Описание</PanelHeaderSimple>
             <Header>
-                Проект посадки деревьев
+                {activeProject.title}
             </Header>
             <Group>
                 <Cell
                     size="l"
-                    description="Посадить 20 берёз в Коломенском парке"
-                    before={<Avatar src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" size={80} />}
+                    description={activeProject.shortDescription}
+                    before={<Avatar src={activeProject.image} size={80} />}
                     bottomContent={isActive ? (
                         <Button level="commerce" disabled>{status === STATUSES.admin ? 'Вы администратор' : 'Вы участник'}</Button>
                      ) : (
                         <Button onClick={onSetStatus}>Присоединиться к проекту</Button>
                      )}
                 >
-                    Проект посадки деревьев
+                    {activeProject.title}
                 </Cell>
             </Group>
             <Group>
                 <Div>
-                    Социальный проект для облагораживания территории в районе парка Коломенское. Очень важно успеть в течение недели. Сделаем наш парк Лучше!
+                    {activeProject.description}
                 </Div>
             </Group>
             <Group title="Документация">

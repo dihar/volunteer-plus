@@ -10,110 +10,40 @@ import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
 const CheckList = () => {
-    const { setActiveView } = useStore();
+    const { setActiveView, activeProject, setActiveProject } = useStore();
     const onBack = () => {
         setActiveView(VIEWS.project);
+    };
+    const toggleTask = (task) => () => {
+        activeProject.tasks.forEach(taskI => {
+            if (task.description === taskI.description && task.title === taskI.title) {
+                taskI.complete = !taskI.complete;
+            }
+        });
+        setActiveProject({ ...activeProject });
     };
 
 	return (
 		<Panel id={VIEWS.checkList}>
             <PanelHeaderSimple onBack={onBack}>Список заданий</PanelHeaderSimple>
-            <Group>
-                <Cell
-                    size="m"
-                    description="Северная сторона парка"
-                    before={<Checkbox />}
-                >
-                    Посадить 2 берёзы
-                </Cell>
-                <Cell>
-                    <UsersStack
-                        photos={[
-                            'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
-                        ]}
-                    >Ответственный Николай Журавлёв</UsersStack>
-                </Cell>
-            </Group>
-            <Group>
-                <Cell
-                    size="m"
-                    description="Северная сторона парка"
-                    before={<Checkbox />}
-                >
-                    Посадить 2 берёзы
-                </Cell>
-                <Cell>
-                    <UsersStack
-                        photos={[
-                            'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
-                        ]}
-                    >Ответственный Николай Журавлёв</UsersStack>
-                </Cell>
-            </Group>
-            <Group>
-                <Cell
-                    size="m"
-                    description="Северная сторона парка"
-                    before={<Checkbox />}
-                >
-                    Посадить 2 берёзы
-                </Cell>
-                <Cell>
-                    <UsersStack
-                        photos={[
-                            'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
-                        ]}
-                    >Ответственный Николай Журавлёв</UsersStack>
-                </Cell>
-            </Group>
-            <Group>
-                <Cell
-                    size="m"
-                    description="Северная сторона парка"
-                    before={<Checkbox />}
-                >
-                    Посадить 2 берёзы
-                </Cell>
-                <Cell>
-                    <UsersStack
-                        photos={[
-                            'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
-                        ]}
-                    >Ответственный Николай Журавлёв</UsersStack>
-                </Cell>
-            </Group>
-            <Group>
-                <Cell
-                    size="m"
-                    description="Северная сторона парка"
-                    before={<Checkbox />}
-                >
-                    Посадить 2 берёзы
-                </Cell>
-                <Cell>
-                    <UsersStack
-                        photos={[
-                            'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
-                        ]}
-                    >Ответственный Николай Журавлёв</UsersStack>
-                </Cell>
-            </Group>
-            <Group>
-                <Cell
-                    size="m"
-                    description="Северная сторона парка"
-                    before={<Checkbox />}
-                >
-                    Посадить 2 берёзы
-                </Cell>
-                <Cell>
-                    <UsersStack
-                        photos={[
-                            'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
-                        ]}
-                    >Ответственный Николай Журавлёв</UsersStack>
-                </Cell>
-            </Group>
+            {activeProject.tasks.map(task => (
+                <Group key={`${task.title}-${task.description}`}>
+                    <Cell
+                        size="m"
+                        description={task.description}
+                        before={<Checkbox onChange={toggleTask(task)} checked={task.complete} />}
+                    >
+                        {task.title}
+                    </Cell>
+                    <Cell>
+                        <UsersStack
+                            photos={[
+                                'https://sun9-19.userapi.com/c851232/v851232757/fb949/4rDdDHqGglQ.jpg?ava=1',
+                            ]}
+                        >Ответственный Николай Журавлёв</UsersStack>
+                    </Cell>
+                </Group>
+            ))}
 		</Panel>
 	);
 }

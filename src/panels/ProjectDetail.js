@@ -14,7 +14,7 @@ import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
 const ProjectDetail = () => {
-    const { setActiveView } = useStore();
+    const { setActiveView, activeProject } = useStore();
     const onBack = () => {
         setActiveView(VIEWS.project);
     };
@@ -23,20 +23,20 @@ const ProjectDetail = () => {
 		<Panel id={VIEWS.projectDetail}>
             <PanelHeaderSimple onBack={onBack}>Описание</PanelHeaderSimple>
             <Header>
-                Проект посадки деревьев
+                {activeProject.title}
             </Header>
             <Group>
                 <Cell
                     size="l"
-                    description="Посадить 20 берёз в Коломенском парке"
-                    before={<Avatar src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" size={80} />}
+                    description={activeProject.shortDescription}
+                    before={<Avatar src={activeProject.image} size={80} />}
                 >
-                    Проект посадки деревьев
+                    {activeProject.title}
                 </Cell>
             </Group>
             <Group>
                 <Div>
-                    Социальный проект для облагораживания территории в районе парка Коломенское. Очень важно успеть в течение недели. Сделаем наш парк Лучше!
+                    {activeProject.description}
                 </Div>
             </Group>
             <Group title="Документация">
