@@ -4,6 +4,8 @@ import View from '@vkontakte/vkui/dist/components/View/View';
 import '@vkontakte/vkui/dist/vkui.css';
 import Main from './panels/Main';
 import Project from './panels/Project';
+import ProjectDetail from './panels/ProjectDetail';
+import Partials from './panels/Partials';
 import { VIEWS } from './constants';
 import { useStore } from './stores/app-store';
 
@@ -24,6 +26,8 @@ const App = () => {
 		<View activePanel={activeView}>
 			<Main id={VIEWS.main} />
 			<Project id={VIEWS.project} />
+			<ProjectDetail id={VIEWS.projectDetail} />
+			<Partials id={VIEWS.partials} />
 		</View>
 	);
 }

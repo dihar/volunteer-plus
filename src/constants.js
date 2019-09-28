@@ -6,5 +6,7 @@ export const TABS = {
 
 export const VIEWS = {
     main: 'main',
-    project: 'project'
+    project: 'project',
+    projectDetail: 'projectDetail',
+    partials: 'partials'
 };
