@@ -1,0 +1,33 @@
+{
+    "projects": [
+        {
+            "id": 0,
+            "admin": 10,
+            "title": "Посадка деревьев",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpYe5yPqQnJknDvuZXq5UyA_2xB3gNlvsADLDRiLUoXCkfSrcfpFa3Qzdtig",
+            "shortDescription": "Посадить 20 берёз в Коломенском парке",
+            "description": "Социальный проект для облагораживания территории в районе парка Коломенское. Очень важно успеть в течение недели. Сделаем наш парк Лучше!",
+            "participants": [
+                10,
+                13,
+                14
+            ],
+            "tasks": [
+                {
+                    "complete": true,
+                    "title": "Посадить две берёзы",
+                    "description": "Северная сторона парка",
+                    "responsible": "12"
+                }
+            ]
+        }
+    ],
+    "participants": [
+        {
+            "id": 10,
+            "name": "Змей горыныч",
+            "image": "https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg",
+            "priority": "Готов помогать старикам"
+        }
+    ]
+}

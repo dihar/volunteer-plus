@@ -6,7 +6,8 @@ import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import '@vkontakte/vkui/dist/vkui.css';
-import PanelHeaderSimple from '../components/PanelHeaderSimple'
+import PanelHeaderSimple from '../components/PanelHeaderSimple';
+import Messages from '../components/Messages';
 import { VIEWS } from '../constants';
 import { useStore } from '../stores/app-store';
 
@@ -65,6 +66,7 @@ const Project = () => {
                     Задачи проекта
                 </Cell>
             </Group>
+            <Messages />
 		</Panel>
 	);
 }

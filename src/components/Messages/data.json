@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Артур Стамбульцан",
+        "time": "21:22",
+        "description": "Координотор",
+        "avatar": "https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg",
+        "messages": [
+            "Ребят, что по задачам?",
+            "Сильно запаздываем"
+        ]
+    },
+    {
+        "name": "Никита Литвинков",
+        "time": "21:40",
+        "description": "Участник",
+        "avatar": "https://i.kym-cdn.com/entries/icons/facebook/000/011/914/a_fc5fdd8a.jpg",
+        "messages": [
+            "Артур, у нас небольшие сбои споставщиком",
+            "Решаем щас проблему",
+            "Завтра будут результаты"
+        ]
+    }
+    ,{
+        "name": "Артур Стамбульцан",
+        "time": "21:50",
+        "description": "Координотор",
+        "avatar": "https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg",
+        "messages": [
+            "Хорошо, спасибо за информацию",
+            "нужна моя помощь?"
+        ]
+    }
+    ,{
+        "name": "Артур Стамбульцан",
+        "time": "22:20",
+        "description": "Участник",
+        "avatar": "https://i.kym-cdn.com/entries/icons/facebook/000/011/914/a_fc5fdd8a.jpg",
+        "messages": [
+            "Нет, сами справимся"
+        ]
+    }
+]

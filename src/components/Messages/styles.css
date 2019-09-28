@@ -1,0 +1,11 @@
+.message-text {
+    font-size: .8em;
+    opacity: .8;
+    margin: -3px 0;
+}
+
+.message-time {
+    margin-bottom: 15px;
+    font-size: .8em;
+    opacity: .3;
+}
