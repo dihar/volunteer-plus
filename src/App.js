@@ -3,9 +3,13 @@ import connect from './vk-connect';
 import View from '@vkontakte/vkui/dist/components/View/View';
 import '@vkontakte/vkui/dist/vkui.css';
 import Main from './panels/Main';
+import Project from './panels/Project';
 import { VIEWS } from './constants';
+import { useStore } from './stores/app-store';
 
 const App = () => {
+	const { activeView } = useStore();
+
 	useEffect(() => {
 		connect.subscribe(({ detail: { type, data }}) => {
 			if (type === 'VKWebAppUpdateConfig') {
@@ -17,8 +21,9 @@ const App = () => {
 	}, []);
 
 	return (
-		<View activePanel={VIEWS.main}>
+		<View activePanel={activeView}>
 			<Main id={VIEWS.main} />
+			<Project id={VIEWS.project} />
 		</View>
 	);
 }
