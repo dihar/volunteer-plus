@@ -4,7 +4,8 @@ import { TABS, VIEWS } from '../constants';
 export const { store, useStore } =  initStore({
     activeTab: TABS.catalog,
     activeView: VIEWS.main,
-    alert: null
+    alert: null,
+    user: {}
 }, {
     setActiveTab: (_, payload) => ({
         activeTab: payload
@@ -15,7 +16,8 @@ export const { store, useStore } =  initStore({
     setAlert: ({ setState }, payload) => {
         setTimeout(() => setState({ alert: null }), 3000);
         return { alert: payload };
-    }
+    },
+    setUser: (_, payload) => ({ user: payload })
 }, {
     debug: true
 });

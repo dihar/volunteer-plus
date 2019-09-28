@@ -12,7 +12,7 @@ import { useStore } from '../stores/app-store';
 const Catalog = ({ id, fetchedUser }) => {
 	const { setActiveView } = useStore();
 	const onProjectClick = () => {
-		setActiveView(VIEWS.project);
+		setActiveView(VIEWS.projectDetailOnly);
 	};
 	const onNewClick = () => {
 		setActiveView(VIEWS.form);

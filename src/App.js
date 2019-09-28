@@ -7,6 +7,7 @@ import Project from './panels/Project';
 import ProjectDetail from './panels/ProjectDetail';
 import Partials from './panels/Partials';
 import CheckList from './panels/CheckList';
+import ProjectDetailOnly from './panels/ProjectDetailOnly';
 import Form from './panels/Form';
 import { VIEWS } from './constants';
 import { useStore } from './stores/app-store';
@@ -34,6 +35,7 @@ const App = () => {
 				<Partials id={VIEWS.partials} />
 				<CheckList id={VIEWS.checkList} />
 				<Form id={VIEWS.form} />
+				<ProjectDetailOnly id={VIEWS.projectDetailOnly} />
 			</View>
 			<Alert />
 		</Fragment>

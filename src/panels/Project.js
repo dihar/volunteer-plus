@@ -8,24 +8,14 @@ import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import '@vkontakte/vkui/dist/vkui.css';
 import PanelHeaderSimple from '../components/PanelHeaderSimple';
 import Messages from '../components/Messages';
-import { VIEWS } from '../constants';
+import { VIEWS, STATUSES} from '../constants';
 import { useStore } from '../stores/app-store';
-
-const STATUSES = {
-    participant: 'participant',
-    admin: 'admin',
-    noTMember: 'noTMember'
-};
 
 const Project = () => {
     const { setActiveView } = useStore();
-    const [status, setStatus] = useState(STATUSES.noTMember);
+    const [status] = useState(STATUSES.notMember);
     const routeFactory = (target) => () => setActiveView(target);
-    const onSetRandomStatus = (event) => {
-        event.stopPropagation();
-        setStatus(Math.floor(Math.random() * 2) ? STATUSES.admin : STATUSES.participant);
-    };
-    const isActive = status !== STATUSES.noTMember;
+
 
 	return (
 		<Panel id={VIEWS.project}>
@@ -37,11 +27,7 @@ const Project = () => {
                     description="Посадить 20 берёз в Коломенском парке"
                     before={<Avatar src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />}
                     onClick={routeFactory(VIEWS.projectDetail)}
-                    bottomContent={isActive ? (
-                        <Button level="commerce" disabled>{status === STATUSES.admin ? 'Вы администратор' : 'Вы участник'}</Button>
-                     ) : (
-                        <Button onClick={onSetRandomStatus}>Присоединиться к проекту</Button>
-                     )}
+                    bottomContent={<Button level="commerce" disabled>{status === STATUSES.admin ? 'Вы администратор' : 'Вы участник'}</Button>}
                 >
                     Проект посадки деревьев
                 </Cell>

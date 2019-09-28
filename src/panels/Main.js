@@ -14,8 +14,7 @@ import { useStore } from '../stores/app-store';
 import './styles.css';
 
 const Main = () => {
-	const { activeTab } = useStore();
-	const [fetchedUser, setUser] = useState(null);
+	const { activeTab, setUser, user } = useStore();
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
 	useEffect(() => {
@@ -26,7 +25,7 @@ const Main = () => {
 			setPopout(null);
 		}
 		fetchData();
-	}, []);
+	}, [setUser]);
 
 	return (
 		<Panel id={VIEWS.main}>
@@ -34,8 +33,8 @@ const Main = () => {
             <TabsPanel />
             <div className='hack-panel'>
                 <View activePanel={activeTab} popout={popout}>
-                    <Catalog id={TABS.catalog} fetchedUser={fetchedUser}/>
-                    <MyProjects id={TABS.myProject} fetchedUser={fetchedUser}/>
+                    <Catalog id={TABS.catalog} fetchedUser={user}/>
+                    <MyProjects id={TABS.myProject} fetchedUser={user}/>
                     <Profile id={TABS.profile}/>
                 </View>
             </div>

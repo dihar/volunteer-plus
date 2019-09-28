@@ -22,13 +22,13 @@ const Messages = () => {
                             onClick={() => setActive('dial')}
                             selected={active === 'dial'}
                         >
-                            Общий
+                            Общий чат
                         </TabsItem>
                         <TabsItem
                             onClick={() => setActive('messages')}
                             selected={active === 'messages'}
                         >
-                            Задачи
+                            По задаче
                         </TabsItem>
                     </Tabs>
                 </Cell>
