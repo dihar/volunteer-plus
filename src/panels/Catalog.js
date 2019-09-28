@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import List from '@vkontakte/vkui/dist/components/List/List';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
+import CellButton from '@vkontakte/vkui/dist/components/CellButton/CellButton';
+import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
 
 const Catalog = ({ id, fetchedUser }) => (
 	<Panel id={id}>
+		<Group>
+			<CellButton>Добавить новый проект</CellButton>
+		</Group>
 		{fetchedUser &&
 		<List>
 			<Cell
