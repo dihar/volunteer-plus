@@ -14,11 +14,14 @@ const Catalog = ({ id, fetchedUser }) => {
 	const onProjectClick = () => {
 		setActiveView(VIEWS.project);
 	};
+	const onNewClick = () => {
+		setActiveView(VIEWS.form);
+	};
 
 	return (
 		<Panel id={id}>
 			<Group>
-				<CellButton>Добавить новый проект</CellButton>
+				<CellButton onClick={onNewClick}>Добавить новый проект</CellButton>
 			</Group>
 			{fetchedUser &&
 			<List>

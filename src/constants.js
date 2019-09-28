@@ -10,4 +10,5 @@ export const VIEWS = {
     projectDetail: 'projectDetail',
     partials: 'partials',
     checkList: 'checkList',
+    form: 'form'
 };

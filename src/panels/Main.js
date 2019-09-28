@@ -20,7 +20,8 @@ const Main = () => {
 
 	useEffect(() => {
 		async function fetchData() {
-			const user = await connect.sendPromise('VKWebAppGetUserInfo');
+            const user = await connect.sendPromise('VKWebAppGetUserInfo');
+            user.id = 10;
 			setUser(user);
 			setPopout(null);
 		}
