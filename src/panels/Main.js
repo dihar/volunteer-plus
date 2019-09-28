@@ -11,6 +11,7 @@ import Profile from './Profile';
 import MyProjects from './MyProjects';
 import { TabsPanel } from '../components/TabsPanel';
 import { useStore } from '../stores/app-store';
+import './styles.css';
 
 const Main = () => {
 	const { activeTab } = useStore();
@@ -30,11 +31,13 @@ const Main = () => {
 		<Panel id={VIEWS.main}>
             <PanelHeader noShadow>ВолонтёрПлюс</PanelHeader>
             <TabsPanel />
-            <View activePanel={activeTab} popout={popout}>
-                <Catalog id={TABS.catalog} fetchedUser={fetchedUser}/>
-                <MyProjects id={TABS.myProject}/>
-                <Profile id={TABS.profile}/>
-            </View>
+            <div className='hack-panel'>
+                <View activePanel={activeTab} popout={popout}>
+                    <Catalog id={TABS.catalog} fetchedUser={fetchedUser}/>
+                    <MyProjects id={TABS.myProject} fetchedUser={fetchedUser}/>
+                    <Profile id={TABS.profile}/>
+                </View>
+            </div>
 		</Panel>
 	);
 }

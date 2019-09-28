@@ -1,7 +1,7 @@
 import connect from '@vkontakte/vk-connect';
 import connectMock from '@vkontakte/vkui-connect-mock';
 
-const isMock = false;
+const isMock = true;
 
 let extendedConnect = connect;
 const eventsHeap = {};
