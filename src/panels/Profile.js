@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
-import persik from '../img/persik.png';
+import profile from '../img/profile.png';
 
 const Profile = ({ id }) => (
 	<Panel id={id}>
-		<img className="Persik" src={persik} alt="Persik The Cat" />
+		<img className="profile-image" src={profile} alt="profile" />
 	</Panel>
 );
 

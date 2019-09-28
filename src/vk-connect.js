@@ -1,8 +1,6 @@
 import connect from '@vkontakte/vk-connect';
 import connectMock from '@vkontakte/vkui-connect-mock';
 
-const isMock = false;
-
 let extendedConnect = connect;
 const eventsHeap = {};
 
@@ -20,7 +18,7 @@ const subscriber = (eventData) => {
     }
 };
 
-if (isMock) {
+if (process.env.REACT_APP_MOCK === 'true') {
     extendedConnect = {
         ...connectMock,
         sendPromise: function(method, params) {
