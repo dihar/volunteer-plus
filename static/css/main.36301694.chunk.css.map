@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,yCACI,QACJ,CAEA,eACI,UACJ","file":"main.36301694.chunk.css","sourcesContent":[".hack-panel .View--animated .View__panel {\n    top: 44px;\n}\n\n.profile-image {\n    width: 100%;\n}\n"]}
