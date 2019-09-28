@@ -3,3 +3,8 @@ export const TABS = {
     myProject: 'myProject',
     profile: 'profile'
 };
+
+export const VIEWS = {
+    main: 'main',
+    project: 'project'
+};
